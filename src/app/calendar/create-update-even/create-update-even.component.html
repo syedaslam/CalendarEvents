@@ -10,7 +10,7 @@
     <div mat-dialog-content>
       <section class="_flex-box">
         <mat-form-field class="_flex-1">
-          <mat-label>Event name</mat-label>
+          <mat-label>Title</mat-label>
           <input matInput [formControl]="eventName">
           <mat-icon matPrefix>event_note</mat-icon>
         </mat-form-field>
@@ -24,6 +24,7 @@
               {{time.title}}
             </mat-option>
           </mat-select>
+          <mat-icon matPrefix>query_builder</mat-icon>
         </mat-form-field>
         <mat-form-field class="_flex-1 _ml-10">
           <mat-label>To</mat-label>
@@ -32,6 +33,7 @@
               {{time.title}}
             </mat-option>
           </mat-select>
+          <mat-icon matPrefix>query_builder</mat-icon>
         </mat-form-field>
       </section>
       <mat-form-field class="_w-100">
@@ -40,12 +42,13 @@
         <mat-icon matPrefix>place</mat-icon>
       </mat-form-field>
       <mat-form-field class="_w-100">
-        <mat-label>Event description</mat-label>
+        <mat-label>Description</mat-label>
         <textarea matInput [formControl]="eventDescription"></textarea>
+        <mat-icon matPrefix>description</mat-icon>
       </mat-form-field>
     </div>
     <div mat-dialog-actions>
-      <button class="_custom_btn" mat-raised-button style="margin-left: auto;" color="primary" (click)="onSaveEvent()">
+      <button class="_custom_btn" mat-raised-button style="margin-left: auto;" color="primary" (click)="onSaveEvent()" [disabled]="eventName.invalid">
         {{selectedEvent ? 'Update' : 'Save'}}
       </button>
     </div>

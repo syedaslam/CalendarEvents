@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { CalendarService } from '../calendar.service';
 import { EventDetailsModel } from '../calendar.model';
 
@@ -13,7 +13,7 @@ export class CreateUpdateEvenComponent {
 
 
   eventDate = new Date().setHours(0, 0, 0, 0);
-  eventName = new FormControl('');
+  eventName = new FormControl('', [Validators.required, Validators.minLength(3)]);
   isFullDay = new FormControl(false);
   eventLocation = new FormControl('');
   startTime = new FormControl(0);
@@ -27,7 +27,6 @@ export class CreateUpdateEvenComponent {
 
   constructor(public dialogRef: MatDialogRef<CreateUpdateEvenComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any, private calService: CalendarService) {
-
   }
 
   ngOnInit(): void {
