@@ -1,0 +1,107 @@
+.calander_view {
+  width: 1240px;
+  margin-top: 1.5em;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+  padding: 1em;
+}
+
+.header {
+  background-color: white;
+  justify-content: space-between;
+  padding: 1em;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 40px;
+  border-bottom: 1px solid #e1e1e1;
+  box-shadow: -0px 4px 16px 0px #0000001A;
+}
+
+.week_box {
+  line-height: 30px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+
+  .week_days {
+    font-weight: 400;
+    font-size: 12px;
+    opacity: 0.8;
+    text-align: center;
+    padding: 5px 0;
+  }
+}
+
+.pre_month_days {
+  opacity: 0.5;
+
+  .days {
+    color: gray;
+  }
+}
+
+.calendar_month {
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  overflow: hidden;
+
+  .day-grid {
+    border: 1px solid #e1e1e1;
+    height: 8em;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+
+    &:hover {
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    }
+
+    .event_bar {
+      left: 10px;
+      position: absolute;
+      border-radius: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      background-color: #DD296F;
+      font-size: 10px;
+      color: white;
+      margin: 2px 0;
+      min-width: 88%;
+      max-width: 88%;
+      padding: 0 10px;
+    }
+  }
+
+  .days {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .current_day {
+    background-color: #DD296F;
+    color: white;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50px;
+  }
+}
+
+.clear_storage_btn {
+  position: fixed;
+  right: -8px;
+  bottom: 2em;
+  background: #000000;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  padding: 0.5em 1em;
+  color: white;
+  cursor: pointer;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+}

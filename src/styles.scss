@@ -1,1 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  outline: none;
+}
+
+.mat-typography {
+  font-family: 'Poppins', sans-serif; 
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  outline: none;
+  background-color: #F2F6F8;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #DD296F;
+  border-radius: 12px;
+}
+
+._flex-box {
+  display: flex;
+  align-items: center;
+}
+
+._align-start {
+  align-items: start;
+}
+
+._justify-center {
+  justify-content: center;
+}
+
+._flex-1 {
+  flex: 1;
+}
+
+._w-100 {
+  width: 100%;
+}
+
+._p-10 {
+  padding: 10px;
+}
+
+._custom_btn {
+  max-height: 2em;
+  border-radius: 8px;
+}
+
+._mr-10 {
+  margin-right: 10px;
+}
+
+._ml-10 {
+  margin-left: 10px;
+}
+
+._ml-auto {
+  margin-left: auto;
+}

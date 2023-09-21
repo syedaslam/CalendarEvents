@@ -1,0 +1,53 @@
+<!-- Header view -->
+
+<section class="_flex-box  header">
+  <div>
+    <b> My Calendar </b>
+  </div>
+  <div class="_flex-box">
+    <button type="button" class="_p-0" mat-icon-button (click)="changeMonth(false)">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="chevron_left"></mat-icon>
+    </button>
+    <span>{{viewDate | date: 'MMM, y'}}</span>
+    <button type="button" class="_p-0" mat-icon-button (click)="changeMonth(true)">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="navigate_next"></mat-icon>
+    </button>
+  </div>
+  <div>
+    <button type="button" mat-flat-button color="primary" class="_custom_btn" (click)="createEvent()">
+      New
+    </button>
+  </div>
+</section>
+
+<!-- calander month view -->
+
+<section class="_flex-box _justify-center">
+  <div class="calander_view">
+    <header class="week_box _w-100">
+      <div class="week_days" *ngFor='let dayname of ["MON","TUE","WED","THU","FRI","SAT","SUN"];'>
+        {{dayname}}
+      </div>
+    </header>
+    <div class="calendar_month _w-100" cdkDropListGroup>
+      <div cdkDropList (cdkDropListDropped)="onDragDrop(month, 'drop')" class="day-grid"
+        [class.pre_month_days]="month.previousMonthDay" *ngFor="let month of daysInMonth; index as i"
+        (click)="createEvent(month.date);$event.stopPropagation()">
+        <span class="days" [class.current_day]="month.date == today"> {{month?.date | date: 'd'}} </span>
+        <span [cdkDragDisabled]="event['eventDate'] < today" cdkDrag (cdkDragDropped)="onDragDrop(event, 'drag')"
+          [cdkDragData]="event" class="event_bar"
+          [style.cursor]="event['eventDate'] < today ? 'pointer' : 'grab'"
+          (click)="createEvent(month.date, month['eventList']);$event.stopPropagation()"
+          [style.top]=" (j + 1) * 27 + 'px'" *ngFor="let event of month['eventList']; index as j">
+          {{event['eventName']}}
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- clear localstorage -->
+<div class="clear_storage_btn" role="button" (click)="clearLocalStorage()">
+  Clear storage
+</div>

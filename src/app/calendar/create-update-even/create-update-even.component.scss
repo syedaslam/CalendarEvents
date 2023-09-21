@@ -1,0 +1,73 @@
+.popup {
+    color: white;
+    min-height: 50vh;
+}
+
+.example-margin {
+    margin: 0 12px;
+}
+
+.header {
+    padding: 0.4em 1.6em;
+    background-color: #DD296F;
+}
+
+.container {
+    padding: 1em;
+    color: black !important;
+}
+
+.event-list {
+    background-color: #4a4a4a;
+    padding: 0.5em 1em;
+    margin: 5px 0;
+    position: relative;
+}
+
+.action_btns {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.conformation-view {
+    position: absolute;
+    bottom: 10px;
+    width: 90%;
+    background-color: azure;
+    padding: 1em;
+    border-radius: 8px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: black;
+}
+
+.custom_icons {
+    height: 44px;
+    width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.event-title {
+    font-size: 18px;
+    padding-bottom: 1em;
+}
+
+.title {
+    font-size: 10px;
+    opacity: 0.8;
+}
+
+.event_data {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.description {
+    margin-top: 1em;
+    font-size: 14px;
+    color: rgb(179, 179, 179);
+    text-align: justify;
+}
