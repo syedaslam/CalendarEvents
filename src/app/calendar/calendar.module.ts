@@ -12,12 +12,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { UserManualComponent } from './user-manual/user-manual.component';
 
 
 @NgModule({
   declarations: [
     CalanderViewComponent,
-    CreateUpdateEvenComponent
+    CreateUpdateEvenComponent,
+    UserManualComponent
   ],
   imports: [
     CommonModule,
