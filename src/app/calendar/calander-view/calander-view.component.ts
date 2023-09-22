@@ -94,7 +94,7 @@ export class CalanderViewComponent {
     this.getCurrentMonth();
   }
 
-  createEvent(date?: any, eventList?: EventDetailsModel[]) {
+  onEventClick(date?: any, eventList?: EventDetailsModel[]) {
     if (!eventList && date < this.today) {
       return;
     }

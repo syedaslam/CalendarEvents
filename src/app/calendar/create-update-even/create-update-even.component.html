@@ -1,6 +1,6 @@
 <div class="popup">
   <!-- create update  -->
-  <ng-container *ngIf="!eventList">
+  <ng-template #viewForm>
     <header class="_flex-box header">
       <span class="header_font">Create Event - {{eventDate | date}}</span>
       <button mat-icon-button style="margin-left: auto;" (click)="dialogRef.close()">
@@ -52,11 +52,11 @@
         {{selectedEvent ? 'Update' : 'Save'}}
       </button>
     </div>
-  </ng-container>
+  </ng-template>
   <!-- event list -->
-  <ng-container *ngIf="eventList">
+  <ng-container *ngIf="eventList; else viewForm">
     <header class="_flex-box header">
-      <span>Events - {{eventDate | date}}</span>
+      <span class="header_font">Events - {{eventDate | date}}</span>
       <button mat-icon-button class="_ml-auto" (click)="dialogRef.close()">
         <mat-icon aria-hidden="false" color="white" fontIcon="cancel"></mat-icon>
       </button>
@@ -70,7 +70,7 @@
         </section>
         <section>
           <div class="_flex-box _align-start">
-            <ng-container *ngIf="!event?.isFullDay">
+            <ng-template #notFullDay>
               <div class="_flex-1">
                 <div class="title">From</div>
                 <div class="event_data">{{(event?.eventDate + event?.eventStartTime) | date: 'shortTime'}}</div>
@@ -79,8 +79,8 @@
                 <div class="title">To</div>
                 <div class="event_data">{{(event?.eventDate + event?.eventEndTime) | date: 'shortTime'}}</div>
               </div>
-            </ng-container>
-            <ng-container *ngIf="event?.isFullDay">
+            </ng-template>
+            <ng-container *ngIf="event?.isFullDay; else notFullDay">
               <div class="_flex-1">
                 <div class="title">Event</div>
                 <div class="event_data">All day</div>
